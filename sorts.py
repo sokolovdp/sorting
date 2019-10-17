@@ -40,7 +40,6 @@ def merge_sorted_lists(list_left, list_right):
     elif len_list_right == 0:
         return list_left
 
-    # General case
     index_left = index_right = 0
     list_merged = []  # list to build and return
     list_len_target = len_list_left + len_list_right
@@ -102,11 +101,9 @@ def partition(arr, low, high):
     return pos
 
 
-# Function to do Quick sort
 def quick_sort_recursive(arr, low, high):
     if low < high:
-        # pi is partitioning index, arr[p] is now
-        # at right place
+        # pi is partitioning index, arr[p] is now at right place
         pi = partition(arr, low, high)
 
         # Separately sort elements before partition and after partition
