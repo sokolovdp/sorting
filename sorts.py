@@ -123,20 +123,24 @@ def insertion_sort(arr):
     if not arr or len(arr) < 2:
         return arr
 
+    # Move elements of arr[0..i-1], that are greater than key, to one position ahead
+    # of their current position
     for i in range(1, len(arr)):
         key = arr[i]
-
-        # Move elements of arr[0..i-1], that are greater than key,
-        # to one position ahead of their current position
         j = i - 1
         while j >= 0 and key < arr[j]:
             arr[j + 1] = arr[j]
             j -= 1
+        arr[j + 1] = key
+
+    return arr
 
 
 if __name__ == '__main__':
     test = [16, 1, 9, 10, 10, 11]
-    print(quick_sort(test))
+    insertion_sort(test)
+    print(test)
+
     lengths = (19, 101, 500,)
     for length in lengths:
         sequence = [random.randint(0, length) for _ in range(length)]
