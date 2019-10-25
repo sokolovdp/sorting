@@ -120,18 +120,16 @@ def quick_sort(arr):
 
 
 def insertion_sort(arr):
-    if not arr or len(arr) < 2:
+    if len(arr) < 2:
         return arr
 
-    # Move elements of arr[0..i-1], that are greater than key, to one position ahead
-    # of their current position
     for i in range(1, len(arr)):
-        key = arr[i]
-        j = i - 1
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
-            j -= 1
-        arr[j + 1] = key
+        current_value = arr[i]
+        position = i
+        while position > 0 and arr[position - 1] > current_value:
+            arr[position] = arr[position - 1]
+            position = position - 1
+        arr[position] = current_value
 
     return arr
 
