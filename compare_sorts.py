@@ -22,10 +22,10 @@ if __name__ == '__main__':
         t5 = timeit('tim_sort(sequence)', number=N, globals=globals())
 
         print(
-            f'sequence length={len(sequence)} '
-            f'bubble={round(t1, 3)} '
-            f'merge={round(t2, 3)} '
-            f'quick={round(t3, 3)} '
-            f'insertion={round(t4, 3)} '
-            f'tim_sort={round(t5, 3)} '
+            f'sequence length={len(sequence):4} '
+            f'bubble={round(t1, 3):6} '
+            f'merge={round(t2, 3):6} '
+            f'quick={round(t3, 3):6} '
+            f'insertion={round(t4, 3):6} '
+            f'tim_sort={round(t5, 3):6} '
         )
